@@ -1,0 +1,53 @@
+.homeinfo-maincontainer{
+    background-color: #fff;
+    margin: 2.5%;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.homeinfo-imgcontainer{
+    display:flex;
+    margin: 10px 7%;
+    width: 86%;
+    height: 58vh;
+}
+
+.homeinfo-img1{
+    width: 50%;
+    margin-top: 1.5% ;
+    border-radius: 20px;
+    height: 55.5vh;
+}
+
+.homeinfo-subimgcontainer{
+    display:flex;
+    flex-wrap: wrap; 
+    width: 50%;
+}
+
+.homeinfo-img{
+    width: 47%;
+    margin-left: 3%;
+    margin-top:2% ;
+    border-radius: 10px;
+    height: 27.5vh;
+}
+#host-name{
+    text-transform: capitalize;
+    font-size: 1.7rem;
+}
+.homeinfo-personalInfo{
+    margin: 15px 10%;
+    display: flex;
+    justify-content: space-between;
+}
+#booking-btn{
+    all: unset;
+    width: 160%;
+    height: 50%;
+    font-size: 1.4rem;
+    background-color: rgb(207, 28, 95);
+    text-align: center;
+    border-radius: 10px;
+    color: #fff;
+}
