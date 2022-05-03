@@ -3,22 +3,21 @@ import LogIn from './LogIn';
 import '../../Styles/FormStyles.css';
 
 export default function LoginHome() {
-  const [userStatus, setUserStatus] = useState("tourist");
+  const [userStatus, setUserStatus] = useState("guest");
 
   const [btnColor,setBtnColor] =useState({b1:"#0a9111" ,b2:"#ff6701" ,b3:"#ff6701"});
 
-  const TouristToggler = () => {  setBtnColor({b1:"#0a9111"}); setUserStatus("tourist");}
-  const OwnerToggler = () =>{ setBtnColor({b2:"#0a9111"}); setUserStatus("owner");}
-  const TourGuideToggler = () => {setBtnColor({b3:"#0a9111"});setUserStatus("tourguide");}
+  const GuestToggler = () => {  setBtnColor({b1:"#0a9111"}); setUserStatus("guest");}
+  const HostToggler = () =>{ setBtnColor({b2:"#0a9111"}); setUserStatus("host");}
 
   return (
     <>
       <div className="home-wrapper">
         <div className="home-inner-wrapper">
-          <button className="home-btns" style={{backgroundColor:btnColor.b1}} onClick={TouristToggler}>
-            Tourist
+          <button className="home-btns" style={{backgroundColor:btnColor.b1}} onClick={GuestToggler}>
+            Guest
           </button>
-          <button className="home-btns" style={{backgroundColor:btnColor.b2}}  onClick={OwnerToggler}>
+          <button className="home-btns" style={{backgroundColor:btnColor.b2}}  onClick={HostToggler}>
             Host
           </button>
         </div>

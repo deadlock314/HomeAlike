@@ -7,18 +7,18 @@ export default function SignUpHome() {
   const [userStatus, setUserStatus] = useState("tourist");
   const [btnColor,setBtnColor] =useState({b1:"#0a9111" ,b2:"#ff6701" ,b3:"#ff6701"});
  
-  const TouristToggler = () => {  setBtnColor({b1:"#0a9111"}); setUserStatus("tourist");}
-  const OwnerToggler = () =>{ setBtnColor({b2:"#0a9111"}); setUserStatus("owner");}
+  const GuestToggler = () => {  setBtnColor({b1:"#0a9111"}); setUserStatus("tourist");}
+  const HostToggler = () =>{ setBtnColor({b2:"#0a9111"}); setUserStatus("host");  }
 
 
   return (
     <div>
       <div className="home-wrapper">
         <div className="home-inner-wrapper">
-          <button className="home-btns" style={{backgroundColor:btnColor.b1}} onClick={TouristToggler}>
+          <button className="home-btns" style={{backgroundColor:btnColor.b1}} onClick={GuestToggler}>
             Tourist
           </button>
-          <button className="home-btns" style={{backgroundColor:btnColor.b2}}  onClick={OwnerToggler}>
+          <button className="home-btns" style={{backgroundColor:btnColor.b2}}  onClick={HostToggler}>
             Host
           </button>
         </div>
