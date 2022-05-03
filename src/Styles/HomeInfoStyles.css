@@ -32,22 +32,152 @@
     border-radius: 10px;
     height: 27.5vh;
 }
-#host-name{
+#host-name , .host-add{
     text-transform: capitalize;
     font-size: 1.7rem;
+}
+.host-add{
+    font-size: 1.4rem;
+    margin-top: 10px;
 }
 .homeinfo-personalInfo{
     margin: 15px 10%;
     display: flex;
     justify-content: space-between;
 }
-#booking-btn{
+.booking-btn ,.contact-btn{
     all: unset;
-    width: 160%;
-    height: 50%;
-    font-size: 1.4rem;
+    width: 72%;
+    height: 38px;
+    font-size: 1.3rem;
     background-color: rgb(207, 28, 95);
     text-align: center;
     border-radius: 10px;
     color: #fff;
+    cursor: pointer;
+}
+.contact-btn{
+    margin: 30px 20px 0 18vw;
+}
+.booking-btn:active ,.contact-btn:active{
+    background-color: rgba(173, 33, 85, 0.767);
+}
+.amenities-form{
+    display: flex;
+}
+.homeinfo-formcontainer{
+    display: flex;
+    width: 80%;
+    margin: 14px 12%;
+}
+.homeinfo-formlabel{
+    all: unset;
+    font-size: 1.2rem;
+    margin: 10px;
+}
+.homeinfo-forminput{
+    all: unset;
+    width: 150px;
+    height: 26px;
+    border:  solid 2px black;
+    border-radius: 10px;
+    text-align: center;
+    margin: 7px;
+    font-size: 1.1rem;
+}
+.homeinfo-price{
+font-size: 1.4rem;
+margin: 10px 0 15px;
+}
+
+.homeinfo-amenities{
+display: flex;
+flex-direction: column;
+width: 45%;
+margin: 0 0 20px 12%;
+}
+.homeinfo-amenities p{
+    font-size: 1.4rem;
+    margin: 0 0 15px 0%;
+    }
+
+.homeinfo-amenities span{
+    font-size: 1.2rem;
+    margin: 0 0 15px 15%;
+    }
+
+.homeinfo-rulecontainer {
+display: flex;
+flex-direction: column;
+margin: 0 0 20px 10%;
+
+}
+.homeinfo-rulecontainer p{
+    font-size: 1.4rem;
+    margin: 0 0 15px 2%;
+    }
+
+.homeinfo-rulecontainer span{
+    display: list-item;
+    list-style-type: disc;
+
+    font-size: 1.2rem;
+    margin: 0 0 12px 6%;
+}
+.homeinfo-reasoncontainer span{
+    font-size: 1.4rem;
+    margin: 10px 0 12px 0;
+}
+.homeinfo-reasoncontainer{
+    display: flex;
+flex-direction: column;
+margin: 0 0 20px 12%;
+}
+.homeinfo-reasoncontainer p{
+    font-size: 1.2rem;
+    margin: 0 0 15px 5%;
+}
+
+@media (max-width:750px) {
+
+    .homeinfo-imgcontainer{
+        all: unset;
+        display:flex;
+        padding: 20px 3%;
+        width: 90vw;
+        height: 45vh;
+        overflow: auto;
+        flex-direction: row;
+    }
+    .homeinfo-img1{
+        all: unset;
+        width: 90%;
+        border-radius: 15px;
+    }
+    
+    .homeinfo-subimgcontainer{
+        all: unset;
+        display: flex;
+      flex-direction: row;
+      
+    }
+    
+    .homeinfo-img{
+      all: unset;
+      width: 85vw;
+      margin-left: 19px;
+      border-radius: 15px;
+    }
+    .homeinfo-personalInfo{
+        margin: 15px 6%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    #price-container{
+        margin-left: 47%;
+    }
+  
+
+    
 }

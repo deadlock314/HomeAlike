@@ -13,17 +13,19 @@ const Homes = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (getStorage("DefaultHomes"))
-            setDefaultHomes(getStorage("DefaultHomes"))
+        if (getStorage("DefaultHomes")){
+            setDefaultHomes(getStorage("DefaultHomes"));
+            setLoading(false);
+        } 
         else
             GetFromApi(`${url}/homedata`).then((res) => {
                 setDefaultHomes(res)
                 if(res.length>0)
-                setStorage("DefaultHomes", res)
+                setStorage("DefaultHomes", res);
+                setLoading(false);
             })
-        setLoading(false);
+        
     }, []);
-console.log(defaultHomes);
     return (
         <>
               <p id="homes-title">Homes</p>
