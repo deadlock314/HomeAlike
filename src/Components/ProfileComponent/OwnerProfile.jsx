@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 
 
 
-const OwnerProfile=()=> {
+const HostProfile=()=> {
     const [profile,setProfile]=useState( useSelector((s)=>s.authContext.userData.userAccData)  );
 
 
@@ -15,4 +15,4 @@ const OwnerProfile=()=> {
     ;
 }
 
-export default OwnerProfile;
+export default HostProfile;

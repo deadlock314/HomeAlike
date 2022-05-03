@@ -3,9 +3,17 @@ import Ratings from './Ratings';
 import { useSelector } from 'react-redux';
 import Spinner from '../unitComponent/Spinner';
 import "../../Styles/HomeInfoStyles.css"
+import { useNavigate } from 'react-router';
 const HomeInfoStruct = ({ product }) => {
 
    const HomeInfo = product.state;
+   const UserAuthStatus=useSelector((s)=>s.userAuth.value);
+   const redirect=useNavigate()
+
+   const HandleBooking=()=>(UserAuthStatus)?redirect("/"):redirect("/loginhome");
+
+   const HandleContact=()=>(UserAuthStatus)?redirect("/"):redirect("/loginhome");
+
 
    return (
 
@@ -24,14 +32,14 @@ const HomeInfoStruct = ({ product }) => {
 
          <div className="homeinfo-personalInfo">
             <div>
-               <p id="host-name">Owner : {HomeInfo.name}</p>
+               <p id="host-name">Host : {HomeInfo.name}</p>
                <p className="host-add"> Address : {HomeInfo.state, HomeInfo.city}</p>
                <p className="host-add">PinCode : {HomeInfo.pincode}</p>
                <p className="host-add">LandMark : {HomeInfo.landmark}</p>
             </div>
             <div id="price-container">
                <p className="homeinfo-price">Price : 5000$ per night</p>
-               <button className="booking-btn">Book</button>
+               <button className="booking-btn" onClick={HandleBooking}>Book</button>
             </div>
          </div>
          <div className="amenities-form">
@@ -57,7 +65,7 @@ const HomeInfoStruct = ({ product }) => {
                      <label className="homeinfo-formlabel">Number of Guests</label>
                      <input className="homeinfo-forminput" type="number" />
                   </div>
-           <button className="contact-btn">Contact Host</button>
+           <button className="contact-btn" onClick={HandleBooking}>Contact Host</button>
 
                </form>
 

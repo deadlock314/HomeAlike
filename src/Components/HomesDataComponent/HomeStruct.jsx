@@ -12,7 +12,7 @@ const HomeStruct = ({ props }) => {
 
             <div className="home-container" onClick={ClickToHomeInfo} key={props._id}>
                 <img id="home-img" src={'data:image/jpeg;base64,' + props.img.data.toString('base64')}/>
-                <p id="homeowner-name">{props.name}</p > 
+                <p id="homeHost-name">{props.name}</p > 
                 <p className="home-attributes">{props.state} {props.city}</p>
                 <p className="home-attributes">{props.landmark}</p>
                 <p className="home-attributes">{props.facility}</p > 
