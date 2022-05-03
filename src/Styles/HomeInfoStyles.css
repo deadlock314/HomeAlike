@@ -68,7 +68,7 @@
 .homeinfo-formcontainer{
     display: flex;
     width: 80%;
-    margin: 14px 12%;
+    margin: 14px 10%;
 }
 .homeinfo-formlabel{
     all: unset;
@@ -82,8 +82,8 @@
     border:  solid 2px black;
     border-radius: 10px;
     text-align: center;
-    margin: 7px;
     font-size: 1.1rem;
+    margin: 1.5vw 0 0 4vw;
 }
 .homeinfo-price{
 font-size: 1.4rem;
@@ -122,7 +122,7 @@ margin: 0 0 20px 10%;
     list-style-type: disc;
 
     font-size: 1.2rem;
-    margin: 0 0 12px 6%;
+    margin: 0 0 12px 10%;
 }
 .homeinfo-reasoncontainer span{
     font-size: 1.4rem;
@@ -139,34 +139,33 @@ margin: 0 0 20px 12%;
 }
 
 @media (max-width:750px) {
-
+    
+    .homeinfo-maincontainer{
+        margin: 2.5%;
+        padding: 3% 1%;
+        border-radius: 10px;
+    }
     .homeinfo-imgcontainer{
-        all: unset;
-        display:flex;
-        padding: 20px 3%;
-        width: 90vw;
-        height: 45vh;
         overflow: auto;
         flex-direction: row;
+        height: 50vh;
+        width: 86vw;
+        margin: 10px 1%;
     }
-    .homeinfo-img1{
+    .homeinfo-img1,.homeinfo-img{
         all: unset;
-        width: 90%;
+        width: 80%;
         border-radius: 15px;
     }
     
     .homeinfo-subimgcontainer{
         all: unset;
         display: flex;
-      flex-direction: row;
-      
-    }
-    
+      flex-direction: row; 
+    } 
     .homeinfo-img{
-      all: unset;
-      width: 85vw;
-      margin-left: 19px;
-      border-radius: 15px;
+      width: 80vw;
+      margin-left: 20px;
     }
     .homeinfo-personalInfo{
         margin: 15px 6%;
@@ -177,7 +176,25 @@ margin: 0 0 20px 12%;
     #price-container{
         margin-left: 47%;
     }
-  
+    .amenities-form{
+        flex-direction: column;
+    }
+    .homeinfo-amenities{
+        margin: 0 0 0 8%;
+    }
+    .homeinfo-formcontainer{
+        margin: 5px 0 20px 10%;
+    }
+    .contact-btn{
+        margin: 15px 10px 0 23vw;
+    }
+    .homeinfo-forminput{
+        margin: 10px 0 10px 30vw;
+    }
+    .homeinfo-rulecontainer {
+        margin: 0 0 5px 10%;
+        
+        }
 
     
 }

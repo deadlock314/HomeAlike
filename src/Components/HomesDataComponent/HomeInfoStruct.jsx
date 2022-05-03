@@ -45,11 +45,16 @@ const HomeInfoStruct = ({ product }) => {
             <div className="homeinfo-formcontainer">
                <form>
                   <div>
-                     <label className="homeinfo-formlabel"> Check-in date </label>
+                     <label className="homeinfo-formlabel"> Check-in Date </label>
                      <input className="homeinfo-forminput" type="date" />
-                  </div><div> <label className="homeinfo-formlabel"> Check-out date</label>
+                  </div>
+                  <div>
+                     <label className="homeinfo-formlabel"> Check-out Date</label>
                      <input className="homeinfo-forminput" type="date" />
-                  </div><div><label className="homeinfo-formlabel">Number of Guests</label>
+
+                  </div>
+                  <div>
+                     <label className="homeinfo-formlabel">Number of Guests</label>
                      <input className="homeinfo-forminput" type="number" />
                   </div>
            <button className="contact-btn">Contact Host</button>
