@@ -9,6 +9,7 @@ function SignUp({userStatus}) {
     const redirect = useNavigate();
     const [user, setUser] = useState({ name: '', email: '', password: '' });
     const [signedUpMes, setsignedUpMes] = useState('');
+    const [loading,setLoading]=useState(false);
     
     const changeHandler = (e) => {
         const { name, value } = e.target;
@@ -29,8 +30,7 @@ function SignUp({userStatus}) {
 
     const clickHandler = async (e) => {
         e.preventDefault();
-
-        PostToApi(`${url}/${userStatus}/signup`, user).then((res) =>signupResHandler(res))
+        PostToApi(`${url}/${userStatus}/signup`, user).then((res) => { signupResHandler(res); setLoading(true)})
         .catch((err) =>setsignedUpMes('something went wrong try again'))
     }
 
@@ -44,7 +44,7 @@ function SignUp({userStatus}) {
                 <input type="email" name="email" id='email' value={user.email} onChange={changeHandler} />
                 <label htmlFor="password" > Password : </label>
                 <input type='password' name="password" id='password' value={user.password} onChange={changeHandler} />
-                <button className="authbtn" type='submit' onClick={clickHandler}>Sign Up</button>
+                <button style={{marginTop:"10px"}} className="authbtn" type='submit' onClick={clickHandler}><div className={loading ? "btn-spinner":"xx"}></div>Sign Up</button>
                 <p id="warn-message"> {signedUpMes}</p>
                 <p>Already have an account? <Link className='auth-link' to='/loginhome'> LogIn</Link> </p>
             </form>

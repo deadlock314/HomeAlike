@@ -6,13 +6,10 @@ import HomePageValues from './HomePageValues';
 
 const HomePage=()=> {
     return ( 
-    <>
-   
+    <>   
     <HomePageSuggestedPlace/> 
     <HomePageValues/>
     <HomePageFeedBack/>
-   
-    
     </> 
 );
 }

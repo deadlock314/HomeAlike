@@ -9,7 +9,7 @@ import HomeInfo from './Components/HomesDataComponent/HomeInfo';
 import Homes from './Components/HomesDataComponent/DefaultHomes';
 import AuthOtp from "./Components/authComponent/AuthOtp";
 import HomePage from './Components/HomePageComponent/HomePage';
-import "./Styles/globalStyles.css"
+import "./Styles/globalStyles.css";
 
 const App=()=> {
 
