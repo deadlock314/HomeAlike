@@ -5,18 +5,19 @@ import { url } from '../../StaticInfo';
 import { PostToApi } from '../../HelperFun/ApiReqHandler';
 
 
-function SignUp({userStatus}) {
+function SignUp({ userStatus }) {
     const redirect = useNavigate();
     const [user, setUser] = useState({ name: '', email: '', password: '' });
     const [signedUpMes, setsignedUpMes] = useState('');
-    const [loading,setLoading]=useState(false);
-    
+    const [loading, setLoading] = useState(false);
+
     const changeHandler = (e) => {
         const { name, value } = e.target;
         setUser((user) => ({ ...user, [name]: value }));
     };
 
     const signupResHandler = (res) => {
+        setLoading(false)
         if (res.isDuplicateUser)
             setsignedUpMes('User already exist in database');
         else if (res.isEmailSent)
@@ -30,13 +31,14 @@ function SignUp({userStatus}) {
 
     const clickHandler = async (e) => {
         e.preventDefault();
-        PostToApi(`${url}/${userStatus}/signup`, user).then((res) => { signupResHandler(res); setLoading(true)})
-        .catch((err) =>setsignedUpMes('something went wrong try again'))
+        setLoading(true)
+        PostToApi(`${url}/${userStatus}/signup`, user).then((res) => signupResHandler(res))
+            .catch((err) => setsignedUpMes('something went wrong try again'))
     }
 
     return (
-        <div className='auth-wrapper'> 
-        
+        <div className='auth-wrapper'>
+
             <form className="form">
                 <label htmlFor="name" >Name : </label>
                 <input type='text' name='name' id='name' value={user.name} onChange={changeHandler} />
@@ -44,7 +46,9 @@ function SignUp({userStatus}) {
                 <input type="email" name="email" id='email' value={user.email} onChange={changeHandler} />
                 <label htmlFor="password" > Password : </label>
                 <input type='password' name="password" id='password' value={user.password} onChange={changeHandler} />
-                <button style={{marginTop:"10px"}} className="authbtn" type='submit' onClick={clickHandler}><div className={loading ? "btn-spinner":"xx"}></div>Sign Up</button>
+                <button style={{ marginTop: "10px" }} className="authbtn" type='submit' onClick={clickHandler}>
+                    {loading ? <div className="btn-spinner"></div> : "Sign Up"}
+                </button>
                 <p id="warn-message"> {signedUpMes}</p>
                 <p>Already have an account? <Link className='auth-link' to='/loginhome'> LogIn</Link> </p>
             </form>

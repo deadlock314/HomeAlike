@@ -7,7 +7,7 @@ import { changeUserAuth, setUserData } from '../../ReduxCode/Reducers';
 import { url } from '../../StaticInfo';
 import { PostToApi } from '../../HelperFun/ApiReqHandler';
 
-const LogIn = ({userStatus}) => {
+const LogIn = ({ userStatus }) => {
 
     const redirect = useNavigate();
     const [loading, setLoading] = useState(false);
@@ -22,6 +22,7 @@ const LogIn = ({userStatus}) => {
     };
 
     const loginResHandler = (res) => {
+        setLoading(false)
         if (res.isUserLoggedIn && res.isCorrectPassword) {
             setUser({ email: '', password: '' })
             axios.get(`${url}/user/${res.data.id}`, {
@@ -30,7 +31,7 @@ const LogIn = ({userStatus}) => {
                 if (userdata.data) {
                     dispatch(changeUserAuth(true))
                     dispatch(setUserData(userdata.data))
-                    redirect(`/user/${userdata.data.userAccData._Id}`);
+                    redirect(`/${userStatus}/${userdata.data.userAccData._Id}`);
                 }
             })
         }
@@ -43,30 +44,33 @@ const LogIn = ({userStatus}) => {
 
     }
 
-    const clickHandler = async (e) => {
+    const clickHandler = (e) => {
         e.preventDefault();
-            setLoading(true)
-            PostToApi(`${url}/${userStatus}/login`,user).then((res)=>{loginResHandler(res); setLoading(true)})
-        .catch((err)=>setLoggedInMes('Something went wrong try again'))      
+        setLoading(true)
+        PostToApi(`${url}/${userStatus}/login`, user).then((res) =>  loginResHandler(res) )
+            .catch((err) => setLoggedInMes('Something went wrong try again'))
     }
 
 
 
     return (
         <>
-                    <div className='auth-wrapper'>
-                        <form className="form">
-                            <label htmlFor="email" >Email : </label>
-                            <input type="email" name="email" id='email' value={user.email} onChange={changeHandler} />
-                            <label htmlFor="password" > Password : </label>
-                            <input type='password' name="password" id='password' value={user.password} onChange={changeHandler} />
-                            <Link id='fpass' to='/forgotpassword'>Forgot your password</Link>
-                            <button className="authbtn" type='submit' onClick={clickHandler}><div className={loading ? "btn-spinner":"xx"}></div>LogIn</button>
-                            <p id="warn-message"> {loggedInMes}</p>
-                            <p>Didn't have any account ?<Link className='auth-link' to='/signuphome'> Sign Up</Link></p>
-                            <p>Right Now and enjoy your shoping </p>
-                        </form>
-                    </div>
+            <div className='auth-wrapper'>
+                <form className="form">
+                    <label htmlFor="email" >Email : </label>
+                    <input type="email" name="email" id='email' value={user.email} onChange={changeHandler} />
+                    <label htmlFor="password" > Password : </label>
+                    <input type='password' name="password" id='password' value={user.password} onChange={changeHandler} />
+                    <Link id='fpass' to='/forgotpassword'>Forgot your password</Link>
+                    <button className="authbtn" type='submit' onClick={clickHandler}>
+                        {loading ? <div className="btn-spinner"></div> : "LogIn"}
+
+                    </button>
+                    <p id="warn-message"> {loggedInMes}</p>
+                    <p>Didn't have any account ?<Link className='auth-link' to='/signuphome'> Sign Up</Link></p>
+                    <p>Right Now and enjoy your shoping </p>
+                </form>
+            </div>
         </>
 
 

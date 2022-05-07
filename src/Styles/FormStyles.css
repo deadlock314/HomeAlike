@@ -49,7 +49,7 @@
     text-align: center;
     background-color: #ff6701;
     width: 50%;
-    height: 28px;
+    height: 33px;
     color:#fff;
     font-size: 1.2rem;
 }
@@ -134,27 +134,31 @@ a:hover, a.active{
     background: none;
   }
 
-@media (max-width:500px) {
+@media (max-width:600px) {
 
     .home-wrapper3{  
         width: 90vw;
     }
 
     .home-wrapper{
-        margin: 16vh 3vw 0;
+        margin: 13vh 3vw 0;
     }
     .home-inner-wrapper{
      width: 90vw;
     }
+    .authotp-wrapper form{
+        border-radius: 20px;
+        height: 85vw;
+    } 
 
     .form{
         width: 90vw;
-        height: 80vw;
+        height: 97vw;
     }
     .form input{
         width:70vw;
-        height: 30px;
-        margin: 5px 10px;
+        height: 35px;
+        margin: 10px 10px;
 
     }
     .form label{
@@ -168,18 +172,25 @@ a:hover, a.active{
     .authbtn{
         margin-left: 24px;
         width:70vw;
-        height: 30px;
+        height: 35px;
         margin: 5px 10px;
     }
     .form p{
         padding-left: 2.5vw;
     }
     #auth-otp-label{
-        margin: 0 0 15px 15px;
+       align-self: center;
+       justify-self: center;
         font-size: 1.3rem;
         }
     #auth-otp-para{
-            margin: 10px  0 0 0;
+        all: unset;
+        align-self: center;
+       justify-self: center;
+        margin-bottom: 5px;
+        }
+    .btn-spinner{
+            margin: 3px 30vw;
         }
 }
 

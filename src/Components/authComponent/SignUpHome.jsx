@@ -4,10 +4,10 @@ import SignUp from './SignUp';
 
 
 export default function SignUpHome() {
-  const [userStatus, setUserStatus] = useState("tourist");
+  const [userStatus, setUserStatus] = useState(" guest");
   const [btnColor,setBtnColor] =useState({b1:"#0a9111" ,b2:"#ff6701" ,b3:"#ff6701"});
  
-  const GuestToggler = () => {  setBtnColor({b1:"#0a9111"}); setUserStatus("tourist");}
+  const GuestToggler = () => {  setBtnColor({b1:"#0a9111"}); setUserStatus(" guest");}
   const HostToggler = () =>{ setBtnColor({b2:"#0a9111"}); setUserStatus("host");  }
 
 
@@ -16,7 +16,7 @@ export default function SignUpHome() {
       <div className="home-wrapper">
         <div className="home-inner-wrapper">
           <button className="home-btns" style={{backgroundColor:btnColor.b1}} onClick={GuestToggler}>
-            Tourist
+             Guest
           </button>
           <button className="home-btns" style={{backgroundColor:btnColor.b2}}  onClick={HostToggler}>
             Host
