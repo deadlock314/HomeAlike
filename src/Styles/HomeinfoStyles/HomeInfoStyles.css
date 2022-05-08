@@ -112,12 +112,13 @@ flex-direction: column;
 margin: 0 0 20px 10%;
 
 }
-.homeinfo-rulecontainer p{
+.homeinfo-rulecontainer p{ 
+ 
     font-size: 1.4rem;
     margin: 0 0 15px 2%;
     }
 
-.homeinfo-rulecontainer span{
+.homeinfo-rulecontainer span ,.homeinfo-reasoncontainer p{
     display: list-item;
     list-style-type: disc;
 
@@ -125,6 +126,7 @@ margin: 0 0 20px 10%;
     margin: 0 0 12px 10%;
 }
 .homeinfo-reasoncontainer span{
+    
     font-size: 1.4rem;
     margin: 10px 0 12px 0;
 }
@@ -133,10 +135,7 @@ margin: 0 0 20px 10%;
 flex-direction: column;
 margin: 0 0 20px 12%;
 }
-.homeinfo-reasoncontainer p{
-    font-size: 1.2rem;
-    margin: 0 0 15px 5%;
-}
+
 
 @media (max-width:750px) {
     
@@ -154,7 +153,7 @@ margin: 0 0 20px 12%;
     }
     .homeinfo-img1,.homeinfo-img{
         all: unset;
-        width: 80%;
+        width:0;
         border-radius: 15px;
     }
     
@@ -168,7 +167,7 @@ margin: 0 0 20px 12%;
       margin-left: 20px;
     }
     .homeinfo-personalInfo{
-        margin: 15px 6%;
+        margin: 30px 6%;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
@@ -191,9 +190,21 @@ margin: 0 0 20px 12%;
     .homeinfo-forminput{
         margin: 10px 0 10px 30vw;
     }
-    .homeinfo-rulecontainer {
-        margin: 0 0 5px 10%;
-        
+        .homeinfo-formcontainer{
+            display: flex;
+            margin: 14px 10%;
+        }
+        .homeinfo-formlabel{
+            all: unset;
+            font-size: 1.25rem;
+        }
+        .homeinfo-forminput{
+            text-align: start;
+            padding-left: 10px;
+            margin: 10px  0 10px 30vw;
+        }
+        .homeinfo-rulecontainer  ,.homeinfo-reasoncontainer {
+            margin: 0 0 10px 5%;
         }
 
     

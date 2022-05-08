@@ -2,7 +2,7 @@ import React from 'react';
 import Ratings from './Ratings';
 import { useSelector } from 'react-redux';
 import Spinner from '../unitComponent/Spinner';
-import "../../Styles/HomeInfoStyles.css"
+import "../../Styles/HomeinfoStyles/HomeInfoStyles.css"
 import { useNavigate } from 'react-router';
 const HomeInfoStruct = ({ product }) => {
 
@@ -13,6 +13,8 @@ const HomeInfoStruct = ({ product }) => {
    const HandleBooking=()=>(UserAuthStatus)?redirect("/"):redirect("/loginhome");
 
    const HandleContact=()=>(UserAuthStatus)?redirect("/"):redirect("/loginhome");
+   const ToBase64=(arr)=> btoa(arr.reduce((data, byte) => data + String.fromCharCode(byte), ''));
+
 
 
    return (
@@ -20,12 +22,12 @@ const HomeInfoStruct = ({ product }) => {
 
       <div className="homeinfo-maincontainer"> 
       <div className="homeinfo-imgcontainer">
-         <img className="homeinfo-img1" src={'data:image/jpeg;base64,' + HomeInfo.img.data.toString('base64')} />
+         <img className="homeinfo-img1" src={`data:image/jpeg;base64,${ToBase64(HomeInfo.img.data.data)}`} />
          <div className="homeinfo-subimgcontainer">
-            <img className="homeinfo-img" src={'data:image/jpeg;base64,' + HomeInfo.img.data.toString('base64')} />
-            <img className="homeinfo-img" src={'data:image/jpeg;base64,' + HomeInfo.img.data.toString('base64')} />
-            <img className="homeinfo-img" src={'data:image/jpeg;base64,' + HomeInfo.img.data.toString('base64')} />
-            <img className="homeinfo-img" src={'data:image/jpeg;base64,' + HomeInfo.img.data.toString('base64')} />
+            <img className="homeinfo-img" src={`data:image/jpeg;base64,${ToBase64(HomeInfo.img.data.data)}`} />
+            <img className="homeinfo-img" src={`data:image/jpeg;base64,${ToBase64(HomeInfo.img.data.data)}`} />
+            <img className="homeinfo-img" src={`data:image/jpeg;base64,${ToBase64(HomeInfo.img.data.data)}`} />
+            <img className="homeinfo-img" src={`data:image/jpeg;base64,${ToBase64(HomeInfo.img.data.data)}`} />
          </div>
 
       </div>
@@ -54,11 +56,11 @@ const HomeInfoStruct = ({ product }) => {
                <form>
                   <div>
                      <label className="homeinfo-formlabel"> Check-in Date </label>
-                     <input className="homeinfo-forminput" type="date" />
+                     <input className="homeinfo-forminput" type="text" />
                   </div>
                   <div>
                      <label className="homeinfo-formlabel"> Check-out Date</label>
-                     <input className="homeinfo-forminput" type="date" />
+                     <input className="homeinfo-forminput" type="text" />
 
                   </div>
                   <div>

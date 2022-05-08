@@ -4,7 +4,7 @@ import { GetFromApi } from '../../HelperFun/ApiReqHandler';
 import Spinner from '../unitComponent/Spinner';
 import { getStorage, setStorage } from '../../HelperFun/browserStorageFuns';
 import { url } from '../../StaticInfo';
-import "../../Styles/HomeStruct.css";
+import "../../Styles/HomeinfoStyles/HomeStruct.css";
 
 
 const Homes = () => {
@@ -13,7 +13,7 @@ const Homes = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (getStorage("DefaultHomes").length>0){
+        if (getStorage("DefaultHomes")){
             setDefaultHomes(getStorage("DefaultHomes"));
             setLoading(false);
         } 
